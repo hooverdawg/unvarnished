@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_illuminite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unvarnished:raw_illuminite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unvarnished:illuminite_from_smelting_raw_illuminite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_illuminite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unvarnished:illuminite_from_smelting_raw_illuminite"
+    ]
+  }
+}

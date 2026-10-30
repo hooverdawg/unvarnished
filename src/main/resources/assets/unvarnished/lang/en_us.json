@@ -1,0 +1,22 @@
+{
+  "item.unvarnished.illuminite": "Illuminite Shard",
+  "item.unvarnished.raw_illuminite": "Impure Illuminite",
+  "item.unvarnished.chisel": "Chisel",
+  "item.unvarnished.strawberry": "Strawberry",
+  "item.unvarnished.combustible_shroom": "Combustible Shroom",
+
+  "block.unvarnished.illuminite_block": "Block of Illuminite",
+  "block.unvarnished.raw_illuminite_block": "Block of Impure Illuminite",
+  "block.unvarnished.illuminite_ore": "Illuminite Ore",
+  "block.unvarnished.deepslate_illuminite_ore": "Deepslate Illuminite Ore",
+  "block.unvarnished.end_illuminite_ore": "End Illuminite Ore",
+  "block.unvarnished.magic_block": "Magic Block",
+
+  "creativemodetab.unvarnished.unvarnished_items": "Unvarnished Items",
+  "creativemodetab.unvarnished.unvarnished_blocks": "Unvarnished Blocks",
+
+  "tooltip.unvarnished.chisel": "press §eShift§r for more information",
+  "tooltip.unvarnished.chisel.shift_down": "Chisels blocks into their brick variant",
+  "tooltip.unvarnished.strawberry": "Gives Instant Health (15% chance)",
+  "tooltip.unvarnished.magic_block": "this block seems §2unusual§r..."
+}

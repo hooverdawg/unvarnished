@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_illuminite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "unvarnished:deepslate_illuminite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "unvarnished:illuminite_from_blasting_deepslate_illuminite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_illuminite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "unvarnished:illuminite_from_blasting_deepslate_illuminite_ore"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "unvarnished:block/magic_block"
+    }
+  }
+}

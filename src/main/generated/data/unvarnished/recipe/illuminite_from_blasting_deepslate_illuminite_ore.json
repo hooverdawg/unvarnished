@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "illuminite",
+  "ingredient": "unvarnished:deepslate_illuminite_ore",
+  "result": {
+    "id": "unvarnished:illuminite"
+  }
+}

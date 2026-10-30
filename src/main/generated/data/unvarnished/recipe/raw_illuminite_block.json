@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "illuminite",
+  "key": {
+    "R": "unvarnished:raw_illuminite"
+  },
+  "pattern": [
+    "RRR",
+    "RRR",
+    "RRR"
+  ],
+  "result": {
+    "id": "unvarnished:raw_illuminite_block"
+  }
+}
