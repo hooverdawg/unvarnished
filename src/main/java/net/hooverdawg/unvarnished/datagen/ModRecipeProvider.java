@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.level.ItemLike;
 
@@ -42,6 +43,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('R', ModItems.RAW_ILLUMINITE)
                         .unlockedBy(getHasName(ModItems.RAW_ILLUMINITE), has(ModItems.RAW_ILLUMINITE))
                         .group("illuminite")
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.TROWEL)
+                        .pattern("S  ")
+                        .pattern(" CC")
+                        .define('C', Items.COPPER_INGOT)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(output);
 
                 shapeless(RecipeCategory.MISC, ModItems.RAW_ILLUMINITE, 9)

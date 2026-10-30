@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CHISEL);
                         output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.COMBUSTIBLE_SHROOM);
+                        output.accept(ModItems.TROWEL);
 
                     }).build());
 

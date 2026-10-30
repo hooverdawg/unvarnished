@@ -5,6 +5,7 @@ import net.hooverdawg.unvarnished.Unvarnished;
 import net.hooverdawg.unvarnished.block.ModBlocks;
 import net.hooverdawg.unvarnished.food.ModFoods;
 import net.hooverdawg.unvarnished.item.custom.ChiselItem;
+import net.hooverdawg.unvarnished.item.custom.TrowelItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,6 +27,15 @@ public class ModItems {
 
     public static final Item CHISEL = registerItem("chisel", properties -> new ChiselItem(properties
             .durability(32)));
+
+    public static final Item TROWEL = registerItem("trowel", properties -> new TrowelItem(properties
+            .stacksTo(1)) {
+        @Override
+        public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+            builder.accept(Component.translatable("tooltip.unvarnished.trowel"));
+            super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
+        }
+    });
 
     public static final Item STRAWBERRY = registerItem("strawberry", properties -> new Item(properties
             .food(ModFoods.STRAWBERRY, ModFoods.STRAWBERRY_CONSUMABLE)) {
@@ -59,6 +69,7 @@ public class ModItems {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
             output.accept(CHISEL);
+            output.accept(TROWEL);
         });
     }
 }
