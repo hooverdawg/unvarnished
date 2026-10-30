@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.hooverdawg.unvarnished.block.ModBlocks;
 import net.hooverdawg.unvarnished.creativetab.ModCreativeTabs;
 import net.hooverdawg.unvarnished.item.ModItems;
+import net.hooverdawg.unvarnished.registries.ModComponents;
 import net.hooverdawg.unvarnished.registries.ModFuels;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ public class Unvarnished implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModCreativeTabs.registerModCreativeTabs();
+		ModComponents.registerModComponents();
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();

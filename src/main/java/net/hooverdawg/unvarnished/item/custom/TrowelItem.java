@@ -1,5 +1,10 @@
 package net.hooverdawg.unvarnished.item.custom;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import net.hooverdawg.unvarnished.registries.ModComponents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -7,11 +12,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class TrowelItem extends Item {
 
@@ -21,10 +23,8 @@ public class TrowelItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
         Player player = context.getPlayer();
         if (player == null) return InteractionResult.PASS;
-        if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         //collect hotbar slots that hold blocks
         List<ItemStack> candidates = new ArrayList<>();
@@ -34,12 +34,17 @@ public class TrowelItem extends Item {
         }
         if (candidates.isEmpty()) return InteractionResult.FAIL;
 
-        ItemStack chosen = candidates.get(level.getRandom().nextInt(candidates.size()));
+        //seed lives on trowel so client/server agree
+        ItemStack trowel = context.getItemInHand();
+        long seed = trowel.getOrDefault(ModComponents.PLACING_SEED, 0L);
+        Random random = new Random(seed);
+        trowel.set(ModComponents.PLACING_SEED, random.nextLong());
+
+        ItemStack chosen = candidates.get(random.nextInt(candidates.size()));
         BlockItem blockItem = (BlockItem) chosen.getItem();
 
         BlockHitResult hit = new BlockHitResult(
                 context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside());
-
         BlockPlaceContext placeContext = new BlockPlaceContext(player, context.getHand(), chosen, hit);
 
         return blockItem.place(placeContext);
