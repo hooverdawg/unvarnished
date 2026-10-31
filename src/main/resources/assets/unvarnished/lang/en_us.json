@@ -6,14 +6,22 @@
   "item.unvarnished.trowel": "Trowel",
 
   "block.unvarnished.illuminite_block": "Block of Illuminite",
+  "block.unvarnished.illuminite_stairs": "Illuminite Stairs",
+  "block.unvarnished.illuminite_slab": "Illuminite Slab",
+
   "block.unvarnished.magic_block": "Block of Magic",
+
+  "block.unvarnished.calcite_stairs": "Calcite Stairs",
+  "block.unvarnished.calcite_slab": "Calcite Slab",
 
   "creativemodetab.unvarnished.unvarnished_items": "Unvarnished Items",
   "creativemodetab.unvarnished.unvarnished_blocks": "Unvarnished Blocks",
 
-  "tooltip.unvarnished.chisel": "press §eShift§r for more information",
+  "tooltip.unvarnished.chisel": "Press §eShift§r for more information",
   "tooltip.unvarnished.chisel.shift_down": "Chisels blocks into their brick variant",
   "tooltip.unvarnished.strawberry": "Gives Instant Health (15% chance)",
-  "tooltip.unvarnished.trowel": "Places random blocks from the hotbar",
-  "tooltip.unvarnished.magic_block": "this block seems §2unusual§r..."
+  "tooltip.unvarnished.trowel": "§7Places random Blocks from the Hotbar",
+  "tooltip.unvarnished.magic_block": "this block seems §2unusual§r...",
+
+  "tag.item.unvarnished.transformable_items": "Transformable Items"
 }

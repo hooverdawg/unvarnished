@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "unvarnished:block/illuminite_block",
+    "side": "unvarnished:block/illuminite_block",
+    "top": "unvarnished:block/illuminite_block"
+  }
+}

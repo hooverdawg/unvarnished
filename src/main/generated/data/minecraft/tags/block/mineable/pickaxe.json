@@ -1,6 +1,10 @@
 {
   "values": [
     "unvarnished:illuminite_block",
+    "unvarnished:illuminite_stairs",
+    "unvarnished:illuminite_slab",
+    "unvarnished:calcite_stairs",
+    "unvarnished:calcite_slab",
     "unvarnished:magic_block"
   ]
 }

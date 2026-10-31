@@ -7,6 +7,7 @@ import net.hooverdawg.unvarnished.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.world.level.block.Blocks;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
@@ -15,8 +16,16 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialCube(ModBlocks.ILLUMINITE_BLOCK);
+        //blockModelGenerators.createTrivialCube(ModBlocks.ILLUMINITE_BLOCK);
         blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
+
+        blockModelGenerators.family(Blocks.CALCITE)
+                        .stairs(ModBlocks.CALCITE_STAIRS)
+                        .slab(ModBlocks.CALCITE_SLAB);
+
+        blockModelGenerators.family(ModBlocks.ILLUMINITE_BLOCK)
+                .stairs(ModBlocks.ILLUMINITE_STAIRS)
+                .slab(ModBlocks.ILLUMINITE_SLAB);
     }
 
     @Override

@@ -10,7 +10,9 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -46,6 +48,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         //.unlockedBy(getHasName(ModBlocks._____), has(ModBlocks.______))
                         //.group("_____")
                         //.save(output, "___");
+
+                stairBuilder(ModBlocks.ILLUMINITE_STAIRS, Ingredient.of(ModBlocks.ILLUMINITE_BLOCK))
+                        .unlockedBy(getHasName(ModBlocks.ILLUMINITE_BLOCK), has(ModBlocks.ILLUMINITE_BLOCK))
+                        .group("illuminite")
+                        .save(output);
+
+                slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ILLUMINITE_SLAB, ModBlocks.ILLUMINITE_BLOCK);
+
+                stairBuilder(ModBlocks.CALCITE_STAIRS, Ingredient.of(Blocks.CALCITE))
+                        .unlockedBy(getHasName(Blocks.CALCITE), has(Blocks.CALCITE))
+                        .group("calcite")
+                        .save(output);
+
+                slab(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CALCITE_SLAB, Blocks.CALCITE);
+
             }
         };
     }

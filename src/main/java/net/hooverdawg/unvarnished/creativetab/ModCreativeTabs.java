@@ -30,8 +30,14 @@ public class ModCreativeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ILLUMINITE_BLOCK))
                     .title(Component.translatable("creativemodetab.unvarnished.unvarnished_blocks"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModBlocks.ILLUMINITE_BLOCK);
                         output.accept(ModBlocks.MAGIC_BLOCK);
+
+                        output.accept(ModBlocks.ILLUMINITE_BLOCK);
+                        output.accept(ModBlocks.ILLUMINITE_STAIRS);
+                        output.accept(ModBlocks.ILLUMINITE_SLAB);
+
+                        output.accept(ModBlocks.CALCITE_STAIRS);
+                        output.accept(ModBlocks.CALCITE_SLAB);
 
                     }).build());
 

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "unvarnished:block/illuminite_slab"
+    },
+    "type=double": {
+      "model": "unvarnished:block/illuminite_block"
+    },
+    "type=top": {
+      "model": "unvarnished:block/illuminite_slab_top"
+    }
+  }
+}

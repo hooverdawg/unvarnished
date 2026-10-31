@@ -17,11 +17,19 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     protected void addTags(HolderLookup.Provider registries) {
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ILLUMINITE_BLOCK)
+                .add(ModBlocks.ILLUMINITE_STAIRS)
+                .add(ModBlocks.ILLUMINITE_SLAB)
+                .add(ModBlocks.CALCITE_STAIRS)
+                .add(ModBlocks.CALCITE_SLAB)
                 .add(ModBlocks.MAGIC_BLOCK);
 
-        //valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
+        valueLookupBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.ILLUMINITE_STAIRS)
+                .add(ModBlocks.CALCITE_STAIRS);
 
-        //valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        valueLookupBuilder(BlockTags.SLABS)
+                .add(ModBlocks.ILLUMINITE_SLAB)
+                .add(ModBlocks.CALCITE_SLAB);
 
     }
 }

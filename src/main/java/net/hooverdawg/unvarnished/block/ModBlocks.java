@@ -1,6 +1,5 @@
 package net.hooverdawg.unvarnished.block;
 
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.hooverdawg.unvarnished.Unvarnished;
 import net.hooverdawg.unvarnished.block.custom.MagicBlock;
@@ -10,12 +9,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
@@ -25,15 +21,37 @@ import java.util.function.Function;
 public class ModBlocks {
 
     public static final Block ILLUMINITE_BLOCK = registerBlock("illuminite_block",
-            properties -> new Block(properties.strength(4f)
+            properties -> new Block(properties.strength(1.5f)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.AMETHYST)
-                    .instrument(NoteBlockInstrument.BELL)));
+                    .sound(SoundType.AMETHYST)));
+
+    public static final Block ILLUMINITE_STAIRS = registerBlock("illuminite_stairs",
+            properties -> new StairBlock(ILLUMINITE_BLOCK.defaultBlockState(), properties.strength(1.5f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.AMETHYST)));
+
+    public static final Block ILLUMINITE_SLAB = registerBlock("illuminite_slab",
+            properties -> new SlabBlock(properties.strength(1.5f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.AMETHYST)));
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             properties -> new MagicBlock(properties.strength(2f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.WET_SPONGE)), Component.translatable("tooltip.unvarnished.magic_block"));
+
+    public static final Block CALCITE_STAIRS = registerBlock("calcite_stairs",
+            properties -> new StairBlock(Blocks.CALCITE.defaultBlockState(), properties.strength(0.75f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.CALCITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)));
+
+    public static final Block CALCITE_SLAB = registerBlock("calcite_slab",
+            properties -> new SlabBlock(properties.strength(0.75f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.CALCITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)));
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Unvarnished.MOD_ID, name))));
@@ -71,14 +89,10 @@ public class ModBlocks {
         Unvarnished.LOGGER.info("Registering Blocks for " + Unvarnished.MOD_ID);
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
-            output.accept(ILLUMINITE_BLOCK);
+            output.insertAfter(Blocks.AMETHYST_BLOCK, ILLUMINITE_BLOCK);
+            output.insertAfter(Blocks.CHISELED_TUFF_BRICKS, Blocks.CALCITE);
+            output.insertAfter(Blocks.CALCITE, CALCITE_STAIRS);
+            output.insertAfter(CALCITE_STAIRS, CALCITE_SLAB);
         });
     }
 }
-
-//tile blocks (calcite and smooth basalt)
-// terracotta shingles
-// weaved wool
-// different dye colours (more)
-// mosaic for planks (not just bamboo)
-// more
