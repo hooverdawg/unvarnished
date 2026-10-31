@@ -25,13 +25,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
-                List<ItemLike> ILLUMINITE_SMELTABLES = List.of(
-                        ModBlocks.ILLUMINITE_ORE,
-                        ModBlocks.DEEPSLATE_ILLUMINITE_ORE,
-                        ModBlocks.END_ILLUMINITE_ORE);
+                //List<ItemLike> ILLUMINITE_SMELTABLES = List.of(
+                        //ModBlocks.ILLUMINITE_ORE,
 
-                this.oreSmelting(ILLUMINITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.ILLUMINITE, 0.25f, 200, "illuminite");
-                this.oreBlasting(ILLUMINITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.ILLUMINITE, 0.25f, 100, "illuminite");
+                //this.oreSmelting(ILLUMINITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.ILLUMINITE, 0.25f, 200, "illuminite");
+                //this.oreBlasting(ILLUMINITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, ModItems.ILLUMINITE, 0.25f, 100, "illuminite");
 
                 nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.ILLUMINITE, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ILLUMINITE_BLOCK);
 

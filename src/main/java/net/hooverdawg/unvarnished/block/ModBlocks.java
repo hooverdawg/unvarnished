@@ -1,5 +1,6 @@
 package net.hooverdawg.unvarnished.block;
 
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.hooverdawg.unvarnished.Unvarnished;
 import net.hooverdawg.unvarnished.block.custom.MagicBlock;
@@ -28,20 +29,6 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.BELL)));
-
-
-    public static final Block ILLUMINITE_ORE = registerBlock("illuminite_ore",
-            properties -> new DropExperienceBlock(UniformInt.of(2,5), properties.strength(3f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)));
-    public static final Block DEEPSLATE_ILLUMINITE_ORE = registerBlock("deepslate_illuminite_ore",
-            properties -> new DropExperienceBlock(UniformInt.of(3,6), properties.strength(4.5f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.DEEPSLATE)));
-    public static final Block END_ILLUMINITE_ORE = registerBlock("end_illuminite_ore",
-            properties -> new DropExperienceBlock(UniformInt.of(4,8), properties.strength(5f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE)));
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             properties -> new MagicBlock(properties.strength(2f)
@@ -85,12 +72,6 @@ public class ModBlocks {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
             output.accept(ILLUMINITE_BLOCK);
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
-            output.accept(ILLUMINITE_ORE);
-            output.accept(DEEPSLATE_ILLUMINITE_ORE);
-            output.accept(END_ILLUMINITE_ORE);
         });
     }
 }

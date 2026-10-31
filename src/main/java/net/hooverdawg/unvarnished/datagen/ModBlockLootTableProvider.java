@@ -29,6 +29,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
     public void generate() {
         dropSelf(ModBlocks.ILLUMINITE_BLOCK);
         dropSelf(ModBlocks.MAGIC_BLOCK);
+
+        //add(ModBlocks.END_ILLUMINITE_ORE, createMultipleOreDrops(ModBlocks.END_ILLUMINITE_ORE, ModItems.RAW_ILLUMINITE, 2, 4));
     }
 
     public LootTable.Builder createMultipleOreDrops(final Block block, Item item, float minDrops, float maxDrops) {

@@ -31,9 +31,6 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativemodetab.unvarnished.unvarnished_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.ILLUMINITE_BLOCK);
-                        output.accept(ModBlocks.ILLUMINITE_ORE);
-                        output.accept(ModBlocks.DEEPSLATE_ILLUMINITE_ORE);
-                        output.accept(ModBlocks.END_ILLUMINITE_ORE);
                         output.accept(ModBlocks.MAGIC_BLOCK);
 
                     }).build());

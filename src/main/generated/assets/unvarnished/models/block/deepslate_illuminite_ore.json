@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "unvarnished:block/deepslate_illuminite_ore"
-  }
-}
