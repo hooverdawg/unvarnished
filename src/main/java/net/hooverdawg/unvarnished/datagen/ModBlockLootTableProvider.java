@@ -28,12 +28,6 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
     @Override
     public void generate() {
         dropSelf(ModBlocks.ILLUMINITE_BLOCK);
-        dropSelf(ModBlocks.RAW_ILLUMINITE_BLOCK);
-
-        add(ModBlocks.ILLUMINITE_ORE, createOreDrop(ModBlocks.ILLUMINITE_ORE, ModItems.RAW_ILLUMINITE));
-        add(ModBlocks.DEEPSLATE_ILLUMINITE_ORE, createOreDrop(ModBlocks.DEEPSLATE_ILLUMINITE_ORE, ModItems.RAW_ILLUMINITE));
-
-        add(ModBlocks.END_ILLUMINITE_ORE, createMultipleOreDrops(ModBlocks.END_ILLUMINITE_ORE, ModItems.RAW_ILLUMINITE, 2, 4));
         dropSelf(ModBlocks.MAGIC_BLOCK);
     }
 

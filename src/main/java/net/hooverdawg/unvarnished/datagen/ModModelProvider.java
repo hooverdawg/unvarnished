@@ -16,7 +16,6 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.ILLUMINITE_BLOCK);
-        blockModelGenerators.createTrivialCube(ModBlocks.RAW_ILLUMINITE_BLOCK);
         blockModelGenerators.createTrivialCube(ModBlocks.ILLUMINITE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.DEEPSLATE_ILLUMINITE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.END_ILLUMINITE_ORE);
@@ -26,7 +25,6 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.ILLUMINITE, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.RAW_ILLUMINITE, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(ModItems.CHISEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.TROWEL, ModelTemplates.FLAT_HANDHELD_ITEM);

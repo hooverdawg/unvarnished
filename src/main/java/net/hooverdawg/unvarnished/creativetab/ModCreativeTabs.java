@@ -18,7 +18,6 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativemodetab.unvarnished.unvarnished_items"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.ILLUMINITE);
-                        output.accept(ModItems.RAW_ILLUMINITE);
                         output.accept(ModItems.CHISEL);
                         output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.COMBUSTIBLE_SHROOM);
@@ -32,7 +31,6 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativemodetab.unvarnished.unvarnished_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.ILLUMINITE_BLOCK);
-                        output.accept(ModBlocks.RAW_ILLUMINITE_BLOCK);
                         output.accept(ModBlocks.ILLUMINITE_ORE);
                         output.accept(ModBlocks.DEEPSLATE_ILLUMINITE_ORE);
                         output.accept(ModBlocks.END_ILLUMINITE_ORE);

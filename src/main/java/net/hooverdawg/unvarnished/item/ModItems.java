@@ -12,10 +12,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.function.Consumer;
@@ -23,7 +20,6 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item ILLUMINITE = registerItem("illuminite", Item::new);
-    public static final Item RAW_ILLUMINITE = registerItem("raw_illuminite", Item::new);
 
     public static final Item CHISEL = registerItem("chisel", properties -> new ChiselItem(properties
             .durability(32)));
@@ -60,16 +56,15 @@ public class ModItems {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(ILLUMINITE);
-            output.accept(RAW_ILLUMINITE);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(output -> {
-            output.accept(STRAWBERRY);
+            output.insertAfter(Items.APPLE, STRAWBERRY);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
             output.accept(CHISEL);
-            output.accept(TROWEL);
+            output.insertAfter(Items.SHEARS, TROWEL);
         });
     }
 }

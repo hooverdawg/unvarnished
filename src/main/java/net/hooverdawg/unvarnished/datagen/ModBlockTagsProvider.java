@@ -17,7 +17,6 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     protected void addTags(HolderLookup.Provider registries) {
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ILLUMINITE_BLOCK)
-                .add(ModBlocks.RAW_ILLUMINITE_BLOCK)
                 .add(ModBlocks.ILLUMINITE_ORE)
                 .add(ModBlocks.DEEPSLATE_ILLUMINITE_ORE)
                 .add(ModBlocks.END_ILLUMINITE_ORE)

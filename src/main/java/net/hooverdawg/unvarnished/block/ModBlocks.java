@@ -28,10 +28,6 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.BELL)));
-    public static final Block RAW_ILLUMINITE_BLOCK = registerBlock("raw_illuminite_block",
-            properties -> new Block(properties.strength(5f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.ANCIENT_DEBRIS)));
 
 
     public static final Block ILLUMINITE_ORE = registerBlock("illuminite_ore",
@@ -89,7 +85,6 @@ public class ModBlocks {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
             output.accept(ILLUMINITE_BLOCK);
-            output.accept(RAW_ILLUMINITE_BLOCK);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
@@ -100,7 +95,7 @@ public class ModBlocks {
     }
 }
 
-//tile blocks
+//tile blocks (calcite and smooth basalt)
 // terracotta shingles
 // weaved wool
 // different dye colours (more)

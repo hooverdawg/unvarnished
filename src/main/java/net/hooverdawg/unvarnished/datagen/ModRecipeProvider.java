@@ -26,7 +26,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
                 List<ItemLike> ILLUMINITE_SMELTABLES = List.of(
-                        ModItems.RAW_ILLUMINITE,
                         ModBlocks.ILLUMINITE_ORE,
                         ModBlocks.DEEPSLATE_ILLUMINITE_ORE,
                         ModBlocks.END_ILLUMINITE_ORE);
@@ -36,15 +35,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.ILLUMINITE, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ILLUMINITE_BLOCK);
 
-                shaped(RecipeCategory.MISC, ModBlocks.RAW_ILLUMINITE_BLOCK)
-                        .pattern("RRR")
-                        .pattern("RRR")
-                        .pattern("RRR")
-                        .define('R', ModItems.RAW_ILLUMINITE)
-                        .unlockedBy(getHasName(ModItems.RAW_ILLUMINITE), has(ModItems.RAW_ILLUMINITE))
-                        .group("illuminite")
-                        .save(output);
-
                 shaped(RecipeCategory.TOOLS, ModItems.TROWEL)
                         .pattern("S  ")
                         .pattern(" CC")
@@ -53,11 +43,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(output);
 
-                shapeless(RecipeCategory.MISC, ModItems.RAW_ILLUMINITE, 9)
-                        .requires(ModBlocks.RAW_ILLUMINITE_BLOCK)
-                        .unlockedBy(getHasName(ModBlocks.RAW_ILLUMINITE_BLOCK), has(ModBlocks.RAW_ILLUMINITE_BLOCK))
-                        .group("illuminite")
-                        .save(output, "raw_illuminite");
+                //shapeless(RecipeCategory.MISC, ModItems._____, 9)
+                        //.requires(ModBlocks.______)
+                        //.unlockedBy(getHasName(ModBlocks._____), has(ModBlocks.______))
+                        //.group("_____")
+                        //.save(output, "___");
             }
         };
     }
